@@ -1,0 +1,233 @@
+<style>
+    html{
+        margin: 0;
+        padding: 0;
+    }
+    .surat{
+        /* border: 1px solid red; */
+        margin-left: 2.6cm;
+        margin-right: 2.3cm;
+    }
+    p, .tanggal, .penanggung-jawab, .namaPenanggung_jawab, .nik{
+        font-family: 'Times New Roman', arial;
+        font-size: 12px;
+    }
+    .judul {
+        font-size: 14px;
+        text-align: center;
+    }
+    .judul .judul-surat{
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .namaPenanggung_jawab{
+        margin-top: 33px;
+    }
+    table{
+        /* border: 2px solid; */
+        font-family: 'Times New Roman', arial;
+        font-size: 12px;
+        margin-left: 0px;
+    }
+    .tandatangan{
+        /* border: 1px solid red; */
+        text-align: center;
+        margin-top: 2.5%;
+        /* border: 1px solid; */
+        float: right;
+    }
+    .header{
+        margin-top: 0.4cm;
+        margin-right: 45px;
+        margin-left: 30px;
+        /* border: 1px solid blue; */
+    }
+    .header img{
+        width: 90px;
+        height: auto;
+    }
+    .kopSurat{
+        font-size: 20px;
+        /* border: 1px solid; */
+        text-align: center;
+    }
+    .alamat{
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: -16px;
+        border-bottom: 1px solid;
+        font-family: 'Times New Roman', arial;
+        font-size: 10px;
+        border-top: 1px solid;
+    }
+    .alamat .isi{
+        text-align: center;
+        margin-left: 2.6cm;
+        margin-right: 2.3cm;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    .header .sk{
+        border: 1px solid;
+    }
+    .umpp img{
+        width: 200px;
+        height: auto;
+    }
+</style>
+
+<?php 
+    $tangal = date('Y-m-d'); 
+    date('d F Y', strtotime($tangal));
+
+    function tglIndonesia($tgl){
+        $nama_bulan = array(
+            1 => 'Januari',
+            'Februari',
+            'Maret',
+            'April',
+            'Mei',
+            'Juni',
+            'Juli',
+            'Agustus',
+            'September',
+            'Oktober',
+            'November',
+            'Desember'
+        );
+        $pecahkan = explode('-', $tgl);
+        return $pecahkan[2] . ' ' . $nama_bulan [ (int)$pecahkan[1]] . ' ' . $pecahkan[0];
+    }
+?>
+
+<div class="header">
+    <table style="padding: 0%;">
+        <tr>
+            <?php 
+                $gambar = $data['gambar'];
+                $umpp   = $data['umpp'];
+                // dd($gambar);
+            ?>
+
+            <td class="kategori"  rowspan="3" ><img src="<?=$gambar?>"></td>
+            <td class="kopSurat">LEMBAGA PENELITIAN DAN PENGABDIAN MASYARAKAT UNIVERSITAS MUHAMMADIYAH PEKAJANGAN PEKALONGAN</td>
+        </tr>
+        <tr class="umpp">
+            <td class="gambarUmpp" style="text-align:center; vertical-align: bottom;" ><img src="<?=$umpp?>"></td>
+        </tr>
+        <tr style="height:8px;">
+            <td style="text-align:center; font: size 8px; height:8px; margin-top:-10; vertical-align: top;">SK Menristek Dikti No. 314/KPT/I/2019</td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="alamat">
+    <div class="isi" >
+        Kampus Ambokembang : Jalan Raya Ambokembang No.8 Kab.Pekalongan Telp. (0285) 785179, 785939 Fax : (0285) 785555
+    </div>
+</div>
+
+<div class="surat">
+    <div class="judul">
+        <div class="judul-surat">
+            <b><u>SURAT - TUGAS</u></b>
+        </div>
+        <div class="nomor">
+            Nomor : 1927355.99888.1/UN25.1/KP/2019
+        </div>
+    </div>
+    <div class="salam">
+        <p> Assalamu'alaikum Wr. Wb.<br>
+        Yang bertanda tangan di bawah ini :</p>
+    </div>
+    <div class="isi">
+            <table>
+                <tr class="baris">
+                    <td class="kategori">Nama</td>
+                    <td>:</td>
+                    <td>Nasrul Hakim</td>
+                </tr>
+                <tr class="baris">
+                    <td class="kategori">Jabatan</td>
+                    <td>:</td>
+                    <td>Mahasiswa Magang</td>
+                </tr>
+                <tr class="baris">
+                    <td class="kategori">Alamat</td>
+                    <td>:</td>
+                    <td>Wonoyoso Gg.5</td>
+                </tr>
+                <tr class="baris">
+                    <td class="kategori">Memberikan Tugas Kepada</td>
+                    <td>:</td>
+                    <td>Diki Pangestu</td>
+                </tr>
+                <tr class="baris">
+                    <td class="kategori">Nama Dosen</td>
+                    <td>:</td>
+                    <td>Eko Budi </td>
+                </tr>
+                <tr class="baris">
+                    <td class="kategori">Jabatan</td>
+                    <td>:</td>
+                    <td>Dosen</td>
+                </tr>
+                <tr class="baris">
+                    <td class="kategori">Nama Mahasiswa</td>
+                    <td>:</td>
+                    <td>RizkY kemala</td>
+                </tr>
+                <tr class="baris">
+                    <td class="kategori">Keperluan</td>
+                    <td>:</td>
+                    <td>Tes Keperluan</td>
+                </tr>
+                <tr class="baris">
+                    <td class="kategori">Hari / Tanggal</td>
+                    <td>:</td>
+                    <td>25 - Maret 2022</td>
+                </tr>
+                <tr class="baris">
+                    <td class="kategori">Tujuan</td>
+                    <td>:</td>
+                    <td>Bimbingan Pendamping</td>
+                </tr>
+            </table>
+    </div>
+    <div class="penutup">
+        <p>
+            Demikian surat tugas ini dibuat untuk dilaksanakan dengan penuh tanggung jawab.<br>
+            Terimakasih. <br>
+            Wassalamu'alaikum Wr, Wb.
+        </p>
+    </div>
+    <div class="tandatangan">
+        <div class="tanggal"> Pekalongan, <?= tglIndonesia($tangal)?> </div>
+        <div class="penanggung-jawab">
+            Kepala LPPM
+        </div>
+        <div class="namaPenanggung_jawab">
+            <b> <u> Nuniek Nizmah Fajriyah, M.Kep., Sp.KMB </u></b>
+        </div>
+        <div class="nik">
+            NIK. 1970090819931007
+        </div>
+    </div>
+</div>
+
+
+
+<?php
+$pdf = false;
+
+if(strpos(current_url(),"cetak")){
+    $pdf = true;
+}
+
+if ($pdf == false) {
+?>
+    <input type="button" value="print halaman" onclick="window.open('<?= base_url()?>/pdf_output/cetak','blank')">
+<?php
+}?>
